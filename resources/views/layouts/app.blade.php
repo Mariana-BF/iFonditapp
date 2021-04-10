@@ -78,6 +78,25 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <footer class="text-center footer-style footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 footer-col">
+                        <h3>Sobre Nosotros</h3>
+                        
+                    </div>
+                    <div class="col-md-4 footer-col">
+                        <h3>Donde nos ubicamos</h3>
+                        
+                    </div>
+                    <div class="col-md-4 footer-col">
+                            <h3>Redes Sociales</h3>
+                            
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
