@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    {{-- icono --}}
+    
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -18,6 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/storage/imagenes/logo.jpeg">
 </head>
 <body>
     <div id="app">
@@ -77,23 +81,53 @@
 
         <main class="py-4">
             @yield('content')
+            
         </main>
 
-        <footer class="text-center footer-style footer">
+        <footer class="bg-dark text-white py-5">
             <div class="container">
                 <div class="row">
+                    {{-- Sobre nosotros --}}
                     <div class="col-md-4 footer-col">
-                        <h3>Sobre Nosotros</h3>
+                        <h3 class="text-uppercase">Sobre Nosotros</h3>
+                        <p> Nuestro restaurante 'Fondita' de reciente inauguración, 
+                            tiene como objetivo llegar a todos los gustos con una 
+                            amplia y variada carta. Disponemos de un amplio, acogedor 
+                            y atractivo local para celebrar todo tipo de eventos </p>
                         
                     </div>
-                    <div class="col-md-4 footer-col">
-                        <h3>Donde nos ubicamos</h3>
-                        
-                    </div>
-                    <div class="col-md-4 footer-col">
-                            <h3>Redes Sociales</h3>
+                    {{-- Donde nos ubicamos --}}
+                    <div class=" col-md-4 ">
+                        <h3 class="text-uppercase">Donde nos ubicamos</h3>
+                        <div class="d-flex  align-items col-7 ">
                             
+                                <img src="/storage/imagenes/lugar.png" alt="lugar" class="w-100 img-logo mr-2">
+                                <p>Río Pánuco 6135,Jardines de San Manuel, 72570 Puebla, Pue.</p>
+                               
+                            
+                        </div>
+                        
                     </div>
+                    {{-- redes sociales --}}
+                    <ul class="col-3 list-unstyled ">
+                        <h3 class="text-uppercase">Redes Sociales</h3>
+                        <li class="d-flex justify-content-between mt-4">
+                            
+                            <a href="#" class="text-reset">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </a>
+                            <a href="#" class="text-reset">
+                                <i class="fab fa-twitter fa-2x"></i>
+                            </a>
+                            <a href="#" class="text-reset">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a href="#" class="text-reset">
+                                <i class="fab fa-pinterest-p fa-2x"></i>
+                            </a>
+                        </li>
+
+                    </ul>
                 </div>
             </div>
         </footer>
