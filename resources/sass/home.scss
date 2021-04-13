@@ -16,3 +16,28 @@
         margin-left: 2rem;
     }
 }
+
+.bg-dark .navbar-brand
+{
+    color: white;
+    font-size: 1.8rem;
+    &:hover
+    {
+        color: white;
+    }
+}
+
+.margin6
+{
+    margin-top: 6rem;
+}
+
+.margin8
+{
+    margin-top:8rem;
+}
+
+.size1
+{
+    font-size: 1.1rem;
+}

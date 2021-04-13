@@ -25,8 +25,8 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm ">
+            <div class="container ">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -46,13 +46,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link text-white size1" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
                             
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link text-white size1" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -113,13 +113,13 @@
                         <h3 class="text-uppercase">Redes Sociales</h3>
                         <li class="d-flex justify-content-between mt-4">
                             
-                            <a href="#" class="text-reset">
+                            <a href="https://www.facebook.com/lafonditacocina/" class="text-reset">
                                 <i class="fab fa-facebook fa-2x"></i>
                             </a>
                             <a href="#" class="text-reset">
                                 <i class="fab fa-twitter fa-2x"></i>
                             </a>
-                            <a href="#" class="text-reset">
+                            <a href="https://www.instagram.com/explore/locations/242253191/la-fondita/?hl=es" class="text-reset">
                                 <i class="fab fa-instagram fa-2x"></i>
                             </a>
                             <a href="#" class="text-reset">
