@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlatillosTable extends Migration
+class CreateOrdensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +14,12 @@ class CreatePlatillosTable extends Migration
      */
     public function up()
     {
-        Schema::create('platillos', function (Blueprint $table) {
+        Schema::create('ordens', function (Blueprint $table) {
             $table->id();
+            $table->string('anotaciones');
+            $table->double('total');
+            $table->integer('estatus');
+            $table->foreignId('idUsuario')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreatePlatillosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('platillos');
+        Schema::dropIfExists('ordens');
     }
 }

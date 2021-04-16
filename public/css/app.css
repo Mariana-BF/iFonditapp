@@ -15558,8 +15558,8 @@ a.text-dark:focus {
 }
 
 .fondo {
-  background-image: url(/storage/imagenes/fondo1.jpeg);
-  height: 80vh;
+  background-image: url(/storage/imagenes/bc.png);
+  height: 100vh;
 }
 
 .contenido-header {
@@ -15572,6 +15572,27 @@ a.text-dark:focus {
 
 .contenido-header p {
   margin-left: 2rem;
+}
+
+.bg-dark .navbar-brand {
+  color: white;
+  font-size: 1.8rem;
+}
+
+.bg-dark .navbar-brand:hover {
+  color: white;
+}
+
+.margin6 {
+  margin-top: 6rem;
+}
+
+.margin8 {
+  margin-top: 8rem;
+}
+
+.size1 {
+  font-size: 1.1rem;
 }
 
 
