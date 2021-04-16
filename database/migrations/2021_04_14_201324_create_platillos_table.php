@@ -17,6 +17,7 @@ class CreatePlatillosTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('descripcion');
+            $table->string('imagen');
             $table->double('precio');
             $table->integer('categoria');
             $table->timestamps();
