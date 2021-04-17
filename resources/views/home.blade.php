@@ -1,23 +1,28 @@
-@extends('layouts.app')
+@extends('layouts.app') <!-- Barra y el footer-->
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in admin!') }}
-                </div>
-            </div>
-        </div>
+@section('content') <!-- Lo de enmedio -->
+<h2 class="text-center mb-5">Platillos</h2>
+    <div class="col-md-10 mx-auto bg-white p-3">
+        <table class="table">
+            <thead class="colorTabla text-light">
+                <tr class="text-center">
+                    <th scole="col">Titulo</th>
+                    <th scole="col">Categoría</th>
+                    <th scole="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($infoPlatillos as $platillo)
+                    <tr>
+                        <td>{{$platillo->nombre}}</td>
+                        <td>{{$platillo->categoria}}</td>
+                        <td>
+                            <a class="btn btn-dark mr-1 d-block w-100 mb-2" {{--href="{{ route('recetas.edit',['receta'=>$receta->id])}} "--}}>Editar</a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
-</div>
+
 @endsection

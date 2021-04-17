@@ -21,5 +21,7 @@ Route::get('/', function () {
 Route::get('/probando','ProbarController');
 
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/user',[HomeController::class,'getUser']);
