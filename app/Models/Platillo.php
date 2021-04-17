@@ -7,5 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Platillo extends Model
 {
+    
     use HasFactory;
+
+    protected $fillable = [
+        'nombre',
+        'descripcion',
+        'imagen',
+        'precio',
+        'precio',
+        'categoria',
+        
+    ];
+
 }

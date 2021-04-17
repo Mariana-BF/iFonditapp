@@ -15562,6 +15562,10 @@ a.text-dark:focus {
   height: 100vh;
 }
 
+.colorTabla {
+  background-color: #7a9db9;
+}
+
 .contenido-header {
   display: flex;
   flex-direction: column;
