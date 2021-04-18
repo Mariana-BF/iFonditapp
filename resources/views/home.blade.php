@@ -16,13 +16,16 @@
                     <tr>
                         <td>{{$platillo->nombre}}</td>
                         <td>{{$platillo->categoria}}</td>
-                        <td>
-                            <a class="btn btn-dark mr-1 d-block w-100 mb-2" {{--href="{{ route('recetas.edit',['receta'=>$receta->id])}} "--}}>Editar</a>
+                        <td class="text-center">
+                            <a class="btn btn-dark mr-1 w-50 mb-2" {{--href="{{ route('recetas.edit',['receta'=>$receta->id])}} "--}}>Editar</a>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
+        <div class="text-center">
+        <button type="button" class="btn btn-success w-50">Nuevo producto</button>
+        </div>
     </div>
 
 @endsection
