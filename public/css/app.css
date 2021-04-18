@@ -15669,7 +15669,7 @@ img {
 .portfolio-lightbox__content {
   width: 75%;
   margin: 0 auto;
-  background: black;
+  background: white;
   padding: 1em;
   position: relative;
 }
@@ -15705,7 +15705,7 @@ img {
 
 .sticky-top-3 {
   position: sticky;
-  top: 120px;
+  top: 147px;
 }
 
 
