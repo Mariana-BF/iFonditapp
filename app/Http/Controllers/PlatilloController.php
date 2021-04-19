@@ -12,9 +12,12 @@ class PlatilloController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
-        //
+        $platillos=Platillo::all(); //select * from platillos [info]
+        return view('user',compact('platillos'));
     }
 
     /**
@@ -57,7 +60,8 @@ class PlatilloController extends Controller
      */
     public function edit(Platillo $platillo)
     {
-        //
+        $platillos = Platillo::all();
+        return view('EditarRecetas',compact('platillo','platillos'));
     }
 
     /**
@@ -81,5 +85,26 @@ class PlatilloController extends Controller
     public function destroy(Platillo $platillo)
     {
         //
+    }
+
+    public function getComida()
+    {
+        $platillos = Platillo::all();
+        $platillos = Platillo::where('categoria','Platillo fuerte')->get();
+        return view('user',compact('platillos'));
+    }
+
+    public function getbebida()
+    {
+        $platillos = Platillo::all();
+        $platillos = Platillo::where('categoria','Bebida')->get();
+        return view('user',compact('platillos'));
+    }
+
+    public function getpostre()
+    {
+        $platillos = Platillo::all();
+        $platillos = Platillo::where('categoria','Postre')->get();
+        return view('user',compact('platillos'));
     }
 }

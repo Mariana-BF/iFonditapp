@@ -17,7 +17,7 @@
                         <td>{{$platillo->nombre}}</td>
                         <td>{{$platillo->categoria}}</td>
                         <td class="text-center">
-                            <a class="btn btn-dark mr-1 w-50 mb-2" {{--href="{{ route('recetas.edit',['receta'=>$receta->id])}} "--}}>Editar</a>
+                            <a class="btn btn-dark mr-1 w-50 mb-2" href="{{route('platillos.editar',['platillo'=>$platillo->id])}}">Editar</a>
                         </td>
                     </tr>
                 @endforeach

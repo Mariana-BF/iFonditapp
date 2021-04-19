@@ -20,8 +20,15 @@ Route::get('/', function () {
 
 Route::get('/probando','ProbarController');
 
-Auth::routes();
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/user',[HomeController::class,'getUser']);
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/user',[HomeController::class,'getUser'])->name('platillos');
+Route::get('/platillo/{platillo}/edit', 'PlatilloController@edit')->name('platillos.editar');
+
+Route::get('/user/comida','PlatilloController@getComida')->name('platillos.comida');
+Route::get('/user/bebida','PlatilloController@getbebida')->name('platillos.bebida');
+Route::get('/user/postre','PlatilloController@getpostre')->name('platillos.postre');
+
+Auth::routes();
