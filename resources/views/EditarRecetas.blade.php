@@ -29,7 +29,7 @@
             </div>
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Descripción</label>
-              <textarea class="form-control"  name="descripcion" id="exampleFormControlTextarea1" rows="3">{{$platillo->descripcion}}</textarea>
+              <textarea class="form-control" value="{{$platillo->descripcion}}" name="descripcion" id="exampleFormControlTextarea1" rows="3">{{$platillo->descripcion}}</textarea>
               <input type="file" name="imagen" accept="image/*" onchange="prevIMG(this)">
             </div>
             <a type="button" class="btn btn-primary"  href="{{route('home')}}" >Atrás</a>

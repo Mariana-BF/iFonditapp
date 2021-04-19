@@ -54,6 +54,8 @@ class PlatilloController extends Controller
             $ruta_imagen =  $request['imagen']->store('platillos','public'); //guarda la imagen y proporcionna su direccion
             /// si quieres ver la foto se usa storage con php artisan storage:link
             //
+            $img = Image::make( public_path("storage/{$ruta_imagen}"))->fit(1280,450);
+            $img->save();
              
 
             DB::table('platillos')->insert([
@@ -119,6 +121,7 @@ class PlatilloController extends Controller
             $platillo->nombre = $data['nombre'];
             $platillo->categoria = $data['categoria'];
             $platillo->precio = $data['precio'];
+            $platillo->descripcion = $data['descripcion'];
              
 
         
@@ -132,7 +135,7 @@ class PlatilloController extends Controller
             $ruta_imagen = $request['imagen']->store('platillos','public');
 
             
-            $img = Image::make( public_path("storage/{$ruta_imagen}"))->fit(1000,550);
+            $img = Image::make( public_path("storage/{$ruta_imagen}"))->fit(1280,450);
             $img->save();
 
             //Asignar al objeto
