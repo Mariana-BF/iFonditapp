@@ -119,7 +119,7 @@
                         <h3 class="text-uppercase">Donde nos ubicamos</h3>
                         <div class="d-flex  align-items col-7 ">
                             
-                                <img src="/storage/imagenes/lugar.png" alt="lugar" class="w-100 img-logo mr-2">
+                                <img src="/storage/platillos/lugar.png" alt="lugar" class="w-100 img-logo mr-2">
                                 <p>Río Pánuco 6135,Jardines de San Manuel, 72570 Puebla, Pue.</p>
                                
                             

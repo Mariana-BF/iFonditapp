@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Models\Platillo;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,7 @@ Route::get('/user',[HomeController::class,'getUser'])->name('platillos');
 Route::get('/platillo/{platillo}/edit', 'PlatilloController@edit')->name('platillos.editar');
 Route::get('/platillo/create', 'PlatilloController@create')->name('platillos.agregar');
 Route::post('/platillo', 'PlatilloController@store')->name('platillos.guardar');
+Route::put('/platillo/{platillo}','PlatilloController@update')->name('platillos.update');
 
 
 Route::get('/user/comida','PlatilloController@getComida')->name('platillos.comida');

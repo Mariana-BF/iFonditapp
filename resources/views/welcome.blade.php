@@ -6,13 +6,13 @@
 <div id="carouselExampleControls" class="carousel slide my-5" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/storage//imagenes/pozole.jpeg" class="d-block w-100" alt="...">
+      <img src="/storage//platillos/pozole.jpeg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="/storage//imagenes/tacos.jpeg" class="d-block w-100" alt="...">
+      <img src="/storage//platillos/tacos.jpeg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="/storage//imagenes/enchiladas.jpeg" class="d-block w-100" alt="...">
+      <img src="/storage//platillos/enchiladas-inicio.jpeg" class="d-block w-100" alt="...">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

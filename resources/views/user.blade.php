@@ -28,7 +28,7 @@
                 {{-- Recorrer todos los registros --}}
                 @foreach ($platillos as $platillo)
                     <div class="portfolio__item">
-                        <img src="/storage/platillos/{{$platillo->imagen}}" alt="" width="100%">
+                        <img src="/storage/{{$platillo->imagen}}" alt="" width="100%">
                         <div class="portfolio__desc text-center">
                             <h3 class="portfolio__title">{{$platillo->nombre}}</h3>
                             <a href="#{{$platillo->id}}" class="button">ordenar</a>
@@ -43,7 +43,7 @@
                 <div id="{{$platillo->id}}" class="portfolio-lightbox">
                     <div class="portfolio-lightbox__content">
                         <a href="#" class="close"></a>
-                        <img src="/storage/platillos/{{$platillo->imagen}}" alt="">
+                        <img src="/storage/{{$platillo->imagen}}" alt="">
                             
                         <div class="card text-center bg-dark">
                               <div class="card-body">
