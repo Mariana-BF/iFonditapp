@@ -17,7 +17,7 @@ class PlatillosSeeder extends Seeder
         $platillo= Platillo::create([
             'nombre'=> 'Pozole',
             'descripcion'=> 'Delicioso pozole tradicional',
-            'imagen' => 'pozole.jpg',
+            'imagen' => 'pozole.png',
             'precio' => 50,
             'categoria'=> "Platillo fuerte",
             
@@ -26,7 +26,7 @@ class PlatillosSeeder extends Seeder
         $platillo2= Platillo::create([
             'nombre'=> 'Tacos',
             'descripcion'=> 'Tacos de bisteck , longaniza y chuleta',
-            'imagen' => 'tacos.jpg',
+            'imagen' => 'tacos.png',
             'precio' => 10,
             'categoria'=> "Platillo fuerte",
             
@@ -35,7 +35,7 @@ class PlatillosSeeder extends Seeder
         $platillo3= Platillo::create([
             'nombre'=> 'Enchiladas',
             'descripcion'=> 'Con su queso gratinado , una delicia!',
-            'imagen' => 'enchiladas.jpg',
+            'imagen' => 'enchiladas.png',
             'precio' => 75,
             'categoria'=> "Platillo fuerte",
             
@@ -44,7 +44,7 @@ class PlatillosSeeder extends Seeder
         $platillo4 = Platillo::create([
             'nombre'=> 'Chilaquiles',
             'descripcion'=> 'Ricos Chilaquiles con bisteck',
-            'imagen' => 'chilaquiles.jpg',
+            'imagen' => 'chilaquiles.png',
             'precio' => 80,
             'categoria'=> "Platillo fuerte",
         ]);
@@ -52,7 +52,7 @@ class PlatillosSeeder extends Seeder
         $platillo5 = Platillo::create([
             'nombre'=> 'Chile en nogada',
             'descripcion'=> 'Rico Chile en nogada',
-            'imagen' => 'chile.jpg',
+            'imagen' => 'chile.png',
             'precio' => 80,
             'categoria'=> "Platillo fuerte",
         ]);
@@ -60,7 +60,7 @@ class PlatillosSeeder extends Seeder
         $platillo6 = Platillo::create([
             'nombre'=> 'Quesadilla',
             'descripcion'=> 'Rica quesadilla',
-            'imagen' => 'quesadilla.jpg',
+            'imagen' => 'quesadilla.png',
             'precio' => 80,
             'categoria'=> "Platillo fuerte",
         ]);
@@ -68,7 +68,7 @@ class PlatillosSeeder extends Seeder
         $bebida1 = Platillo::create([
             'nombre'=> 'Limonada',
             'descripcion'=> 'Rica limonada',
-            'imagen' => 'limonada.jpg',
+            'imagen' => 'limonada.png',
             'precio' => 80,
             'categoria'=> "Bebida",
         ]);
@@ -76,7 +76,7 @@ class PlatillosSeeder extends Seeder
         $bebida1 = Platillo::create([
             'nombre'=> 'Cafe',
             'descripcion'=> 'Rico cafe',
-            'imagen' => 'cafe.jpg',
+            'imagen' => 'cafe.png',
             'precio' => 80,
             'categoria'=> "Bebida",
         ]);
@@ -84,7 +84,7 @@ class PlatillosSeeder extends Seeder
         $postre = Platillo::create([
             'nombre'=> 'Helado de vainilla',
             'descripcion'=> 'Rico helado de vainilla con chocolate',
-            'imagen' => 'helado.jpg',
+            'imagen' => 'helado.png',
             'precio' => 50,
             'categoria'=> "Postre",
         ]);
@@ -92,7 +92,7 @@ class PlatillosSeeder extends Seeder
         $postre2 = Platillo::create([
             'nombre'=> 'Pastel de queso',
             'descripcion'=> 'Rico Pastel de queso con chocolate',
-            'imagen' => 'pastelqueso.jpg',
+            'imagen' => 'pastelqueso.png',
             'precio' => 60,
             'categoria'=> "Postre",
         ]);
@@ -100,7 +100,7 @@ class PlatillosSeeder extends Seeder
         $postre3 = Platillo::create([
             'nombre'=> 'Tarta de manzana',
             'descripcion'=> 'Rica tarta de manzana con fruta fresca',
-            'imagen' => 'tartamanzana.jpg',
+            'imagen' => 'tartamanzana.png',
             'precio' => 40,
             'categoria'=> "Postre",
         ]);

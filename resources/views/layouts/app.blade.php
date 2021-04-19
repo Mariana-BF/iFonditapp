@@ -71,6 +71,13 @@
                                         Menú
                                     </a>
                                     
+                                    @if ( Auth::user()->fullacces=='yes')
+
+                                    <a class="dropdown-item" href="{{ route('home') }}">
+                                        Editar platillos
+                                    </a>
+                                        @endif
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

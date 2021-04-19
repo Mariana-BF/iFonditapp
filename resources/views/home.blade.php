@@ -24,7 +24,7 @@
             </tbody>
         </table>
         <div class="text-center">
-        <button type="button" class="btn btn-success w-50">Nuevo producto</button>
+        <a type="button" class="btn btn-success w-50"  href="{{route('platillos.agregar')}}"  >Nuevo producto</a>
         </div>
     </div>
 
