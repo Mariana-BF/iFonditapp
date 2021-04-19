@@ -25,8 +25,8 @@ Route::get('/probando','ProbarController');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user',[HomeController::class,'getUser'])->name('platillos');
-//Route::get('/user','PlatilloController@getbebidas')->name('platillos.bebidas');
-//Route::get('/user','PlatilloController@index')->name('platillos.index');
+Route::get('/platillo/{platillo}/edit', 'PlatilloController@edit')->name('platillos.editar');
+
 Route::get('/user/comida','PlatilloController@getComida')->name('platillos.comida');
 Route::get('/user/bebida','PlatilloController@getbebida')->name('platillos.bebida');
 Route::get('/user/postre','PlatilloController@getpostre')->name('platillos.postre');

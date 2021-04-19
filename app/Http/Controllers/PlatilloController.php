@@ -60,7 +60,8 @@ class PlatilloController extends Controller
      */
     public function edit(Platillo $platillo)
     {
-        //
+        $platillos = Platillo::all();
+        return view('EditarRecetas',compact('platillo','platillos'));
     }
 
     /**

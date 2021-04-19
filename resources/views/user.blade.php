@@ -43,7 +43,7 @@
                 <div id="{{$platillo->id}}" class="portfolio-lightbox">
                     <div class="portfolio-lightbox__content">
                         <a href="#" class="close"></a>
-                        <img src="/storage/imagenes/pozole.jpeg" alt="">
+                        <img src="/storage/platillos/{{$platillo->imagen}}" alt="">
                             
                         <div class="card text-center bg-dark">
                               <div class="card-body">
