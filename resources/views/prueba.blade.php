@@ -2,6 +2,30 @@
 
 @section('content')
 
+<script type="text/javascript">
+  function prevIMG(input){
+    if (input.files && input.files[0])
+    {
+      var urrl = window.URL || window.webkitURL;
+      var imagen = new Image();
+      imagen.onload = function() {
+        var lector = new FileReader();
+        lector.onload = function (e){
+          var prev = document.getElementById("previsualizar");
+          prev.src = e.target.result;
+        };
+
+        lector.readAsDataURL(input.files[0]);
+      }
+      imagen.onerror = function() {
+        console.log("ERROR_IMAGEN");
+      }
+
+      imagen.src = urrl.createObjectURL(input.files[0]);
+    }
+  }
+</script>
+
 <div class="container">
     <!-- Stack the columns on mobile by making one full-width and the other half-width -->
     <div class="row">
@@ -37,13 +61,13 @@
         <form class="md-form">
             <div class="file-field">
               <div class="mb-4 text-center">
-                <img src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg"
-                  class="rounded-circle z-depth-1-half avatar-pic" alt="example placeholder avatar" width="150px">
+                <img id="previsualizar" src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg"
+                  class="rounded-circle z-depth-1-half avatar-pic" alt="example placeholder avatar" width="150px" height="150px">
               </div>
               <div class="d-flex justify-content-center">
                 <div class="btn btn-mdb-color btn-rounded float-left">
                   <span>Add photo</span>
-                  <input type="file">
+                  <input type="file" accept="image/*" onchange="prevIMG(this)">
                 </div>
               </div>
             </div>
