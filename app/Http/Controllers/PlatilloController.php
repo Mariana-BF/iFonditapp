@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Platillo;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class PlatilloController extends Controller
 {
@@ -28,6 +29,8 @@ class PlatilloController extends Controller
     public function create()
     {
         //
+        return view('AgregarPlatillo');
+    
     }
 
     /**
@@ -38,7 +41,33 @@ class PlatilloController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Agregar a la base de datos 
+        $datos=request();
+        $data = request()->validate([
+            'nombre' => 'required|min:6',
+            'categoria' => 'required',
+            'precio' => 'required',
+            'descripcion' => 'required',
+            //'imagen' => 'required|image'
+        ]);
+        $ruta_imagen =  $request['imagen']->store('platillos','public'); //guarda la imagen y proporcionna su direccion
+            /// si quieres ver la foto se usa storage con php artisan storage:link
+
+            //
+            $img = Image::make( public_path("storage/{$ruta_imagen}") );//->fit(1000,351);
+            $img->save();
+        auth()->platillo()->create(
+            [
+            'nombre' => $data['nombre'],
+            'categoria' => $data['categoria'],
+             'precio' => $data['precio'],
+             'imagen' => $ruta_imagen,
+              // helper para saber que usuario esta autrenticado 
+             'descipcion' => $data['descipcion'],
+            ]
+        );
+        return redirect()->action('HomeController@index');
+
     }
 
     /**
@@ -61,9 +90,8 @@ class PlatilloController extends Controller
     public function edit(Platillo $platillo)
     {
         $platillos = Platillo::all();
-        return view('EditarRecetas',compact('platillo','platillos'));
+        
     }
-
     /**
      * Update the specified resource in storage.
      *
