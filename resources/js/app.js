@@ -7,6 +7,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
 import VueSweetAlert2 from 'vue-sweetalert2';
 require('./bootstrap');
 
+
 window.Vue = require('vue').default;
 
 /**

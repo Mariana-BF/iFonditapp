@@ -9,9 +9,9 @@
         <form method="POST" action="{{route('platillos.update',['platillo' => $platillo->id ] ) }}" enctype="multipart/form-data" novalidate >
           @csrf
           @method('PUT')
-            <div class="form-group">
+            <div  class="form-group">
               <label for="exampleFormControlInput1">Nombre del platillo</label>
-              <input type="text" value="{{$platillo->nombre}}" name="nombre" class="form-control" id="exampleFormControlInput1" placeholder="Aqui va el nombre">
+              <input id="nombre"  type="text" value="{{$platillo->nombre}}" name="nombre" class="form-control" id="exampleFormControlInput1" placeholder="Aqui va el nombre">
             </div>
             <div class="form-group">
               <label for="exampleFormControlSelect1">Categoría</label>
@@ -32,7 +32,7 @@
               <textarea class="form-control" value="{{$platillo->descripcion}}" name="descripcion" id="exampleFormControlTextarea1" rows="3">{{$platillo->descripcion}}</textarea>
               <input type="file" name="imagen" accept="image/*" onchange="prevIMG(this)">
             </div>
-            <a type="button" class="btn btn-primary"  href="{{route('home')}}" >Atrás</a>
+            <a type="button"  class="btn btn-primary"  href="{{route('home')}}" >Atrás</a>
             <actualizar-platillo
             platillo-id={{$platillo->id}}
           ></actualizar-platillo>
@@ -56,9 +56,4 @@
           </form>
     </div>
     </div>
-
-
-
-
-
 @endsection

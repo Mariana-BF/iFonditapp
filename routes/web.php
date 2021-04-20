@@ -36,5 +36,6 @@ Route::put('/platillo/{platillo}','PlatilloController@update')->name('platillos.
 Route::get('/user/comida','PlatilloController@getComida')->name('platillos.comida');
 Route::get('/user/bebida','PlatilloController@getbebida')->name('platillos.bebida');
 Route::get('/user/postre','PlatilloController@getpostre')->name('platillos.postre');
+Route::get('/orden/ordenes','OrdenPlatilloController@getOrden')->name('orden');
 
 Auth::routes();

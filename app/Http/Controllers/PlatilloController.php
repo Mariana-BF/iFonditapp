@@ -160,20 +160,20 @@ class PlatilloController extends Controller
     {
         $platillos = Platillo::all();
         $platillos = Platillo::where('categoria','Platillo fuerte')->get();
-        return view('user',compact('platillos'));
+        return response(json_encode($platillos),200)->header('Content-type','text/plain');
     }
 
     public function getbebida()
     {
         $platillos = Platillo::all();
         $platillos = Platillo::where('categoria','Bebida')->get();
-        return view('user',compact('platillos'));
+        return response(json_encode($platillos),200)->header('Content-type','text/plain');
     }
 
     public function getpostre()
     {
         $platillos = Platillo::all();
         $platillos = Platillo::where('categoria','Postre')->get();
-        return view('user',compact('platillos'));
+        return response(json_encode($platillos),200)->header('Content-type','text/plain');
     }
 }
