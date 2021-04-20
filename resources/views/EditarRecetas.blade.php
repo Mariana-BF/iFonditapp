@@ -33,7 +33,9 @@
               <input type="file" name="imagen" accept="image/*" onchange="prevIMG(this)">
             </div>
             <a type="button" class="btn btn-primary"  href="{{route('home')}}" >Atrás</a>
-            <input type="submit" class="btn btn-success" value="Agregar Platillo">
+            <actualizar-platillo
+            platillo-id={{$platillo->id}}
+          ></actualizar-platillo>
           </form>
       </div>
       <div class="col-6 col-md-4">

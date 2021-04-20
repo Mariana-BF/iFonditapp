@@ -113,7 +113,7 @@ class PlatilloController extends Controller
      */
     public function update(Request $request, Platillo $platillo)
     {
-        
+
         $data = request();
         
 
@@ -122,10 +122,6 @@ class PlatilloController extends Controller
             $platillo->categoria = $data['categoria'];
             $platillo->precio = $data['precio'];
             $platillo->descripcion = $data['descripcion'];
-             
-
-        
-            
 
             //verificar si se subio otra imagen
             if(request('imagen'))
