@@ -19,7 +19,7 @@ class CreatePlatillosTable extends Migration
             $table->string('descripcion');
             $table->string('imagen');
             $table->double('precio');
-            $table->integer('categoria');
+            $table->string('categoria');
             $table->timestamps();
         });
     }

@@ -32,6 +32,30 @@ class HomeController extends Controller
 
     public function getUser()
     {
-        return view('user');
+        $platillos = Platillo::all();
+        
+        return view('user',compact('platillos'));
     }
+
+    public function getComida()
+    {
+        $platillos = Platillo::all();
+        $platillos = Platillo::where('categoria','Platillo fuerte')->get();
+        return view('user',compact('platillos'));
+    }
+
+    public function getbebida()
+    {
+        $platillos = Platillo::all();
+        $platillos = Platillo::where('categoria','Bebida')->get();
+        return view('user',compact('platillos'));
+    }
+
+    public function getpostre()
+    {
+        $platillos = Platillo::all();
+        $platillos = Platillo::where('categoria','Postre')->get();
+        return view('user',compact('platillos'));
+    }
+
 }

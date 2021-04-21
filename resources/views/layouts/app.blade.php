@@ -37,16 +37,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link text-white size1" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    
                                 </li>
                             @endif
                             
@@ -57,16 +59,32 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="text-white nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
+                                
+
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    
+                                    <a class="dropdown-item" href="{{ route('platillos') }}">
+                                        Menú
+                                    </a>
+                                    
+                                    @if ( Auth::user()->fullacces=='yes')
+
+                                    <a class="dropdown-item" href="{{ route('home') }}">
+                                        Editar platillos
+                                    </a>
+                                        @endif
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+
+                                    
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
@@ -81,12 +99,12 @@
 
         <main class="py-4">
             @yield('content')
-            
+
         </main>
 
-        <footer class="bg-dark text-white py-5">
+        <footer class="bg-dark text-white py-5 mt-2 ">
             <div class="container">
-                <div class="row">
+                <div class="row container atras">
                     {{-- Sobre nosotros --}}
                     <div class="col-md-4 footer-col">
                         <h3 class="text-uppercase">Sobre Nosotros</h3>
@@ -101,7 +119,7 @@
                         <h3 class="text-uppercase">Donde nos ubicamos</h3>
                         <div class="d-flex  align-items col-7 ">
                             
-                                <img src="/storage/imagenes/lugar.png" alt="lugar" class="w-100 img-logo mr-2">
+                                <img src="/storage/platillos/lugar.png" alt="lugar" class="w-100 img-logo mr-2">
                                 <p>Río Pánuco 6135,Jardines de San Manuel, 72570 Puebla, Pue.</p>
                                
                             
@@ -132,5 +150,6 @@
             </div>
         </footer>
     </div>
+    @yield('javascript')
 </body>
 </html>
