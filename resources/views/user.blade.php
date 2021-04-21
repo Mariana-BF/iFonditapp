@@ -8,27 +8,27 @@
             <div class="sticky-top-2">
                 <div class="card">
                     <h3 class="text-center mt-2">Categorias</h3>
-                    <a href="{{ route('platillos.comida') }}" id="plato" class="text-center my-1"><i class="fas fa-utensils">Platillo fuerte</i></a>
-                    <a href="{{ route('platillos.bebida') }}" class="text-center my-1"><i class="fas fa-glass-martini-alt">Bebidas</i></a>
-                    <a href="{{ route('platillos.postre') }}" class="text-center my-1"><i class="fas fa-candy-cane">Postres</i></a>
+                    <button  id="platofuerte" class="text-center mb-2 mx-4 btn-success"><i class="fas fa-utensils mx-2 fa-lg"></i> Platillo fuerte</button>
+                    <button id="bebidas"  class="text-center mb-2 btn-success mx-4"><i class="fas fa-glass-martini-alt mx-2 fa-lg"></i>Bebidas</button>
+                    <button id="postres"  class="text-center  mb-2 btn-success mx-4"><i class="fas fa-candy-cane mx-2 fa-lg"></i>Postres</button>
                     
                 </div>
             </div>
             <div class="sticky-top-3 mt-5">
                 <div class="card " id="ordenes">
                     <h3 class="text-center mt-2">Ordenes</h3>
-                    <p class="text-center">kldfjglkdfgjlfkgdj</p>
-                    <p class="text-center">dlkfsdfjlk</p>
+                    
+                    
                 </div>
             </div>
         </div>
 
         <div class="col-9">
-            <div class="portfolio">
+            <div class="portfolio" id="contenido">
                 {{-- Recorrer todos los registros --}}
                 @foreach ($platillos as $platillo)
                     <div class="portfolio__item">
-                        <img src="/storage/platillos/{{$platillo->imagen}}" alt="" width="100%">
+                        <img src="/storage/{{$platillo->imagen}}" alt="" width="100%">
                         <div class="portfolio__desc text-center">
                             <h3 class="portfolio__title">{{$platillo->nombre}}</h3>
                             <a href="#{{$platillo->id}}" class="button">ordenar</a>
@@ -43,7 +43,7 @@
                 <div id="{{$platillo->id}}" class="portfolio-lightbox">
                     <div class="portfolio-lightbox__content">
                         <a href="#" class="close"></a>
-                        <img src="/storage/platillos/{{$platillo->imagen}}" alt="">
+                        <img src="/storage/{{$platillo->imagen}}" alt="">
                             
                         <div class="card text-center bg-dark">
                               <div class="card-body">
@@ -61,23 +61,15 @@
         </div>
     </div>
 </div>
+    <form action="GET" action="/orden/ordenes" id="form1">
+        @csrf
+        <input type="hidden" name="id" value="1">
+    </form>
 @endsection
+
 @section('javascript')
-
-<script>
-
-    
-    var ordenes = document.querySelector("#ordenes");
-    
-    $('plato').on('click',function()
-    {
-        ordenes.appendChild('kakak');
-    })
-    
-    
-    
-    
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/actualizar.js') }}"></script>
 @endsection
 
 

@@ -33,7 +33,7 @@ class HomeController extends Controller
     public function getUser()
     {
         $platillos = Platillo::all();
-        //$platillos = Platillo::where('categoria','Platillo fuerte')->get();
+        
         return view('user',compact('platillos'));
     }
 

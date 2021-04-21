@@ -82,4 +82,10 @@ class OrdenPlatilloController extends Controller
     {
         //
     }
+
+    public function getOrden(Orden $orden)
+    {
+        
+        return response(json_encode($orden),200)->header('Content-type','text/plain');
+    }
 }

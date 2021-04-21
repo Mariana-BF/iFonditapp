@@ -42,8 +42,8 @@ class PlatilloController extends Controller
      */
     public function store(Request $request)
     {
+        
         //Agregar a la base de datos 
-        $datos=request();
         $data = request()->validate([
             'nombre' => 'required|min:6',
             'categoria' => 'required',
@@ -53,10 +53,10 @@ class PlatilloController extends Controller
         ]);
             $ruta_imagen =  $request['imagen']->store('platillos','public'); //guarda la imagen y proporcionna su direccion
             /// si quieres ver la foto se usa storage con php artisan storage:link
-
             //
-            // $img = Image::make( public_path("storage/{$ruta_imagen}"))->fit(1000,550);
-            // $img->save();
+            $img = Image::make( public_path("storage/{$ruta_imagen}"))->fit(1280,450);
+            $img->save();
+             
 
             DB::table('platillos')->insert([
             'nombre' => $data['nombre'],
@@ -101,6 +101,7 @@ class PlatilloController extends Controller
     public function edit(Platillo $platillo)
     {
         $platillos = Platillo::all();
+        return view('EditarRecetas',compact('platillo','platillos'));
         
     }
     /**
@@ -112,7 +113,36 @@ class PlatilloController extends Controller
      */
     public function update(Request $request, Platillo $platillo)
     {
-        //
+
+        $data = request();
+        
+
+        
+            $platillo->nombre = $data['nombre'];
+            $platillo->categoria = $data['categoria'];
+            $platillo->precio = $data['precio'];
+            $platillo->descripcion = $data['descripcion'];
+
+            //verificar si se subio otra imagen
+            if(request('imagen'))
+            { // imagen es el atributo name que le pusimos al formulario
+        
+            //obtener la ruta de la imagen
+            $ruta_imagen = $request['imagen']->store('platillos','public');
+
+            
+            $img = Image::make( public_path("storage/{$ruta_imagen}"))->fit(1280,450);
+            $img->save();
+
+            //Asignar al objeto
+            $platillo->imagen = $ruta_imagen;
+            }
+
+
+            $platillo->save();
+
+            return redirect()->action('HomeController@index');
+            
     }
 
     /**
@@ -130,20 +160,20 @@ class PlatilloController extends Controller
     {
         $platillos = Platillo::all();
         $platillos = Platillo::where('categoria','Platillo fuerte')->get();
-        return view('user',compact('platillos'));
+        return response(json_encode($platillos),200)->header('Content-type','text/plain');
     }
 
     public function getbebida()
     {
         $platillos = Platillo::all();
         $platillos = Platillo::where('categoria','Bebida')->get();
-        return view('user',compact('platillos'));
+        return response(json_encode($platillos),200)->header('Content-type','text/plain');
     }
 
     public function getpostre()
     {
         $platillos = Platillo::all();
         $platillos = Platillo::where('categoria','Postre')->get();
-        return view('user',compact('platillos'));
+        return response(json_encode($platillos),200)->header('Content-type','text/plain');
     }
 }

@@ -15558,7 +15558,7 @@ a.text-dark:focus {
 }
 
 .fondo {
-  background-image: url(/storage/imagenes/bc.png);
+  background-image: url(/storage/platillos/bc.png);
   height: 100vh;
 }
 
@@ -15705,7 +15705,7 @@ img {
 
 .sticky-top-3 {
   position: sticky;
-  top: 147px;
+  top: 165px;
 }
 
 
