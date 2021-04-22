@@ -16,12 +16,11 @@
             </div>
             <div class="sticky-top-3 mt-5">
                 <div class="card " id="ordenes">
-                    <h3 class="text-center mt-2">Orden</h3>
-                    <div id="contenido2" class="text-center">
-                        
+                    <h3 class="text-center mt-2">Finaliza tu orden</h3>
+                    <div id="contenido2" class="text-center">                       
                     </div>
                     <hr class="my-1">
-                    <a type="button" href="{{route('Order.crear')}}" class="btn btn-primary mx-3 my-3">Ordenar</a>
+                    <a type="button" href="{{route('Order.crear')}}" class="btn btn-primary mx-3 my-3">Continuar</a>
                     
                 </div>
             </div>

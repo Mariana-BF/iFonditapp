@@ -44,7 +44,7 @@
   <div class="row mb-3">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Dirección</label>
     <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Calle, Colonia">
     </div>
   </div>
   <div class="row mb-3">
@@ -57,24 +57,26 @@
 
     <fieldset class="form-group">
         <div class="row">
-          <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+          <legend class="col-form-label col-sm-2 pt-0">Método de pago</legend>
           <div class="col-sm-10">
             <div class="form-check">
               <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
               <label class="form-check-label" for="gridRadios1">
-                First radio
+                Tarjeta de crédito/débito
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
               <label class="form-check-label" for="gridRadios2">
-                Second radio
+                Pago en Efectivo
               </label>
             </div>
           </div>
         </div>
       </fieldset>
-  
+      <div class="col-12">
+        <enviar-formulario></enviar-formulario>
+      </div>
 </form>
 
 
