@@ -38,4 +38,7 @@ Route::get('/user/bebida','PlatilloController@getbebida')->name('platillos.bebid
 Route::get('/user/postre','PlatilloController@getpostre')->name('platillos.postre');
 Route::get('/orden/ordenes','OrdenPlatilloController@getOrden')->name('orden');
 
+
+Route::put('/orden/{id_platillo}','OrdenController@InsertarenOrden')->name('InsertarOrden');
+Route::get('/order/create', 'OrdenController@create')->name('Order.crear');
 Auth::routes();

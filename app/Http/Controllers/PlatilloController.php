@@ -115,9 +115,6 @@ class PlatilloController extends Controller
     {
 
         $data = request();
-        
-
-        
             $platillo->nombre = $data['nombre'];
             $platillo->categoria = $data['categoria'];
             $platillo->precio = $data['precio'];
@@ -175,5 +172,19 @@ class PlatilloController extends Controller
         $platillos = Platillo::all();
         $platillos = Platillo::where('categoria','Postre')->get();
         return response(json_encode($platillos),200)->header('Content-type','text/plain');
+    }
+
+    public function InsertarenOrden(Request $request) //, int $cantidad)
+    {
+        return 'Entro al controller';
+        $platillos = Platillo::all();
+        $platillos = Platillo::where('id_platillo',$id_platillo)->get();
+        //$total  = $cantidad*$platillo->precio;
+        DB::table('order_has_platillo')->insert([
+
+            'orden_id'=>1,
+            'idPlatillo'=>$platillos->id,
+            'cantidad'=>190,//$total,
+            ]);
     }
 }

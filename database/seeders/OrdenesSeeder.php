@@ -21,11 +21,5 @@ class OrdenesSeeder extends Seeder
             'estatus' => 0,
             'idUsuario' => 1,
         ]);
-
-        DB::table('orden_has_platillo')->insert([
-            'orden_id'=>1,
-            'idPlatillo'=>1,
-            'cantidad'=>200,
-        ]);
     }
 }
