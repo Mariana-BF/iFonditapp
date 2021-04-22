@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Orden;
 use Illuminate\Http\Request;
-
+use App\Models\Platillo;
+use Illuminate\Support\Facades\DB;
 class OrdenController extends Controller
 {
     /**
@@ -24,7 +25,7 @@ class OrdenController extends Controller
      */
     public function create()
     {
-        //
+        return view('FormularioEnvio');
     }
 
     /**
@@ -81,5 +82,23 @@ class OrdenController extends Controller
     public function destroy(Orden $orden)
     {
         //
+    }
+
+
+    public function InsertarenOrden(Request $request) //, int $cantidad)
+    {
+        $id_platillo=request();
+        $platillos = Platillo::all();
+        $platillos = Platillo::where('id',intval($id_platillo["id"] ) )->first();
+        
+        
+        DB::table('orden_has_platillo')->insert([
+            'orden_id'=>1,
+            'idPlatillo'=>$platillos->id,
+            'cantidad'=>$id_platillo["cantidad"],
+        ]);
+
+
+        return redirect()->action('HomeController@getUser');
     }
 }

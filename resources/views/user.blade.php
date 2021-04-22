@@ -55,8 +55,15 @@
                                 <p class="portfolio-lightbox__body">{{$platillo->descripcion}}</p>
                                 <p>Precio</p>
                                 <p>{{$platillo->precio}}</p>
-                                <button class="btn btn-primary mr-2" id="ordenar">Ordenar</button>
-                                <input type="number" min="1" max="100" />
+                                <form class="btn btn-primary mr-2" id="ordenar"  method="POST"  action="{{route('InsertarOrden',['id_platillo' => $platillo->id ] )}}">
+                                    @csrf
+                                    @method('PUT')
+                                    <input  type="hidden" name="cantidad" id="inputvalue" >
+                                    <input  type="hidden" name="id" value="{{$platillo->id}}">
+
+                                    <button type="submit">Ordenar</button>
+                                </form>
+                                <input id="cantidad" class="cantidad" type="number" min="1" max="100" />
                           </div>
                         </div>
                            
