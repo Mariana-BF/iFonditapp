@@ -17,7 +17,7 @@
             <div class="sticky-top-3 mt-5">
                 <div class="card " id="ordenes">
                     <h3 class="text-center mt-2">Orden</h3>
-                    <div id="contenido" class="text-center">
+                    <div id="contenido2" class="text-center">
                         
                     </div>
                     <hr class="my-1">
@@ -55,7 +55,12 @@
                                 <p class="portfolio-lightbox__body">{{$platillo->descripcion}}</p>
                                 <p>Precio</p>
                                 <p>{{$platillo->precio}}</p>
-                                <button class="btn btn-primary mr-2" id="ordenar">Ordenar</button>
+                                <form class="btn btn-primary mr-2" id="ordenar"  method="POST"  action="{{route('InsertarOrden',['id_platillo' => $platillo->id ] )}}">
+                                    @csrf
+                                    @method('PUT')  
+                                    <input  type="hidden" name="id" value="{{$platillo->id}}">
+                                    <button type="submit">Ordenar</button>
+                                </form>
                                 <input type="number" min="1" max="100" />
                           </div>
                         </div>
