@@ -21,7 +21,7 @@
                         
                     </div>
                     <hr class="my-1">
-                    <button type="button" class="btn btn-primary mx-3 my-3">Ordenar</button>
+                    <a type="button" href="{{route('Order.crear')}}" class="btn btn-primary mx-3 my-3">Ordenar</a>
                     
                 </div>
             </div>
