@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="container">
-
 <h1>Completar pedido </h1>
 
 <h2 class="text-center mb-5">Platillos</h2>
@@ -13,23 +12,24 @@
                 <tr class="text-center">
                     <th scole="col">Titulo</th>
                     <th scole="col">Categoría</th>
+                    <th scole="col">Porciones</th>
                     <th scole="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
-               <!--aqui iba el foreach-->
+               @foreach ($platillosPedidos as $item)
                     <tr>
-                        <td>a</td>
-                        <td>b</td>
+                        <td class="text-center">{{$item->nombre}}</td>
+                        <td class="text-center">{{$item->categoria}}</td>
+                        <td class="text-center">{{$item->cantidad}}</td>
                         <td class="text-center">
-                        c
+                        <a type="button" class="btn btn-danger">Cancelar</a>
                         </td>
                     </tr>
-                <!--aqui iba el endforeach-->
+                    @endforeach
             </tbody>
         </table>
         <div class="text-center">
-        <a type="button" >Nuevo producto</a>
         </div>
     </div>
 

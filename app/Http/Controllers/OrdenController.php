@@ -25,7 +25,14 @@ class OrdenController extends Controller
      */
     public function create()
     {
-        return view('FormularioEnvio');
+        $orden = DB::table('ordens')->get();
+        $platillosPedidos=DB::table('orden_has_platillo')->get();
+
+        $platillosPedidos = DB::table('orden_has_platillo')
+        ->join('platillos', 'orden_has_platillo.idPlatillo', '=', 'platillos.id')
+        ->get();
+        
+        return view('FormularioEnvio',compact('orden','platillosPedidos'));
     }
 
     /**
