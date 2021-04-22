@@ -16,8 +16,11 @@
             </div>
             <div class="sticky-top-3 mt-5">
                 <div class="card " id="ordenes">
-                    <h3 class="text-center mt-2">Ordenes</h3>
-                    
+                    <h3 class="text-center mt-2">Finaliza tu orden</h3>
+                    <div id="contenido2" class="text-center">                       
+                    </div>
+                    <hr class="my-1">
+                    <a type="button" href="{{route('Order.crear')}}" class="btn btn-primary mx-3 my-3">Continuar</a>
                     
                 </div>
             </div>
@@ -27,11 +30,11 @@
             <div class="portfolio" id="contenido">
                 {{-- Recorrer todos los registros --}}
                 @foreach ($platillos as $platillo)
-                    <div class="portfolio__item">
+                    <div class="portfolio__item" >
                         <img src="/storage/{{$platillo->imagen}}" alt="" width="100%">
                         <div class="portfolio__desc text-center">
                             <h3 class="portfolio__title">{{$platillo->nombre}}</h3>
-                            <a href="#{{$platillo->id}}" class="button">ordenar</a>
+                            <a href="#{{$platillo->id}}"  class="button">ordenar</a>
                         </div>
                     </div>
                 @endforeach
@@ -46,11 +49,20 @@
                         <img src="/storage/{{$platillo->imagen}}" alt="">
                             
                         <div class="card text-center bg-dark">
-                              <div class="card-body">
-                                <h3 class="portfolio-lightbox__title mt-2">{{$platillo->nombre}}</h3>
+                           <div class="card-body">
+                                <h3 class="portfolio-lightbox__title  mt-2">{{$platillo->nombre}}</h3>
                                 <p class="portfolio-lightbox__body">{{$platillo->descripcion}}</p>
-                                <a href="" class="btn btn-primary mr-2">Ordenar</a>
-                                <input type="number"/>
+                                <p>Precio</p>
+                                <p>{{$platillo->precio}}</p>
+                                <form class="btn btn-primary mr-2" id="ordenar"  method="POST"  action="{{route('InsertarOrden',['id_platillo' => $platillo->id ] )}}">
+                                    @csrf
+                                    @method('PUT')
+                                    <input  type="hidden" name="cantidad" id="inputvalue" >
+                                    <input  type="hidden" name="id" value="{{$platillo->id}}">
+
+                                    <button type="submit">Ordenar</button>
+                                </form>
+                                <input id="cantidad" class="cantidad" type="number" min="1" max="100" />
                           </div>
                         </div>
                            
@@ -70,6 +82,7 @@
 @section('javascript')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript" src="{{ asset('js/actualizar.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/insertarEnOrden.js') }}"></script>
 @endsection
 
 
