@@ -87,15 +87,17 @@ class OrdenController extends Controller
 
     public function InsertarenOrden(Request $request) //, int $cantidad)
     {
-         $id_platillo=request();
+        $id_platillo=request();
         $platillos = Platillo::all();
-        $platillos = Platillo::where('id',intval($id_platillo["id"] ) )->get();
-      //  $total  = $cantidad*$platillos->precio;
+        $platillos = Platillo::where('id',intval($id_platillo["id"] ) )->first();
+        
+        
         DB::table('orden_has_platillo')->insert([
             'orden_id'=>1,
             'idPlatillo'=>$platillos->id,
-            'cantidad'=>100,
+            'cantidad'=>$id_platillo["cantidad"],
         ]);
+
 
         return redirect()->action('HomeController@getUser');
     }

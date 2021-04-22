@@ -57,11 +57,13 @@
                                 <p>{{$platillo->precio}}</p>
                                 <form class="btn btn-primary mr-2" id="ordenar"  method="POST"  action="{{route('InsertarOrden',['id_platillo' => $platillo->id ] )}}">
                                     @csrf
-                                    @method('PUT')  
+                                    @method('PUT')
+                                    <input  type="hidden" name="cantidad" id="inputvalue" >
                                     <input  type="hidden" name="id" value="{{$platillo->id}}">
+
                                     <button type="submit">Ordenar</button>
                                 </form>
-                                <input type="number" min="1" max="100" />
+                                <input id="cantidad" class="cantidad" type="number" min="1" max="100" />
                           </div>
                         </div>
                            
