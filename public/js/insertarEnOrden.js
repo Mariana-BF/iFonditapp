@@ -13,7 +13,7 @@ $(document).ready(function()
         let platillo='<div> <hr class="my-1">';
         platillo+= "<p class='text-center'>"+nombre+" ..... x"+cantidad+"   total: $ "+total+"</p>";
         platillo+=  "<button type='button' id='cancelar' class='btn btn-danger'>Cancelar</button></div>";
-        $("#contenido").append(platillo);
+        $("#contenido2").append(platillo);
 
     });
 

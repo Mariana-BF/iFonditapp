@@ -17,7 +17,7 @@
             <div class="sticky-top-3 mt-5">
                 <div class="card " id="ordenes">
                     <h3 class="text-center mt-2">Orden</h3>
-                    <div id="contenido" class="text-center">
+                    <div id="contenido2" class="text-center">
                         
                     </div>
                     <hr class="my-1">

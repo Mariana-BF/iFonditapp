@@ -115,9 +115,6 @@ class PlatilloController extends Controller
     {
 
         $data = request();
-        
-
-        
             $platillo->nombre = $data['nombre'];
             $platillo->categoria = $data['categoria'];
             $platillo->precio = $data['precio'];
