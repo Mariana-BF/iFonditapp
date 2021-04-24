@@ -77,7 +77,13 @@
                                         Editar platillos
                                     </a>
                                         @endif
+                                        @if ( Auth::user()->fullacces=='no')
 
+                                        <a class="dropdown-item" href="{{ route('Order.seguir') }}">
+                                            Seguir mi orden
+                                        </a>
+                                            @endif
+                                    
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

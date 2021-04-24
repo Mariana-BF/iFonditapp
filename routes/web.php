@@ -41,6 +41,7 @@ Route::get('/orden/ordenes','OrdenPlatilloController@getOrden')->name('orden');
 
 Route::put('/orden/{id_platillo}','OrdenController@InsertarenOrden')->name('InsertarOrden');
 Route::get('/order/create', 'OrdenController@create')->name('Order.crear');
+Route::get('/orderPlatillo/create', 'OrdenPlatilloController@create')->name('Order.seguir');
 
 
 Auth::routes();

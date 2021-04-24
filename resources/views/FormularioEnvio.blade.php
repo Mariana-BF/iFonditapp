@@ -35,7 +35,7 @@
 
 
 
-<form>
+    <form>
 <div class="mb-3">
     <label for="exampleFormControlTextarea1" class="form-label">Instrucciones especiales</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
@@ -75,7 +75,8 @@
         </div>
       </fieldset>
       <div class="col-12">
-        <enviar-formulario></enviar-formulario>
+        <enviar-formulario ></enviar-formulario>
+        
       </div>
 </form>
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Orden;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class OrdenPlatilloController extends Controller
 {
@@ -15,6 +17,7 @@ class OrdenPlatilloController extends Controller
     public function index()
     {
         //
+        $orden=Orden::all(); 
     }
 
     /**
@@ -25,8 +28,13 @@ class OrdenPlatilloController extends Controller
     public function create()
     {
         //
+        $ordenes = Orden::all();
+
+        return view('SeguirPedido');
+        
     }
 
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -44,9 +52,9 @@ class OrdenPlatilloController extends Controller
      * @param  \App\Models\Orden  $orden
      * @return \Illuminate\Http\Response
      */
-    public function show(Orden $orden)
+    public function show()
     {
-        //
+        //return redirect()->action('HomeController@index');
     }
 
     /**

@@ -24,6 +24,7 @@ Vue.use(VueSweetAlert2);
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('actualizar-platillo', require('./components/Actualizarplatillo.vue').default);
 Vue.component('enviar-formulario', require('./components/EnviarFormulario.vue').default);
+Vue.component('orden-recibida', require('./components/OrdenRecibida.vue').default);
 
 console.log(Vue.prototype);
 /**
