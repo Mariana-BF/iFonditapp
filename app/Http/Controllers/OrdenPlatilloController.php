@@ -17,7 +17,7 @@ class OrdenPlatilloController extends Controller
     public function index()
     {
         //
-        $orden=Orden::all(); 
+        //$orden=Orden::all(); 
     }
 
     /**
@@ -25,12 +25,24 @@ class OrdenPlatilloController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $data = request()->validate([
+            'anotaciones' => 'required|min:6',  
+        ]);
         //
-        $ordenes = Orden::all();
+        $id_orden=request();
+        DB::update('update ordens set anotaciones = ? where id = 1', [$id_orden['anotaciones']] );
+        DB::update('update ordens set estatus = 1 where id = 1');
 
-        return view('SeguirPedido');
+        
+        $orden = Orden::all();
+        $orden = Orden::where('id',1)->first();
+
+          
+   
+            
+        return view('SeguirPedido',compact('orden'));
         
     }
 
@@ -55,6 +67,14 @@ class OrdenPlatilloController extends Controller
     public function show()
     {
         //return redirect()->action('HomeController@index');
+        $orden = Orden::all();
+        $orden = Orden::where('id',1)->first();
+
+          
+   
+            
+        return view('SeguirPedido',compact('orden'));
+        
     }
 
     /**

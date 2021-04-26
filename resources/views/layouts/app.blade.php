@@ -79,7 +79,7 @@
                                         @endif
                                         @if ( Auth::user()->fullacces=='no')
 
-                                        <a class="dropdown-item" href="{{ route('Order.seguir') }}">
+                                        <a class="dropdown-item" href="{{ route('Order.estatus') }}">
                                             Seguir mi orden
                                         </a>
                                             @endif

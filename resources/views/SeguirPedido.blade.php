@@ -4,29 +4,50 @@
 
 <div class='container'>
 
+  
 
     <br>
     <br>
     <br>
-    <h1> El estatus de tu orden es: </h1> <h2> AQUI VA EL ESTATU DESDE LA BD </h2>
+    <h1> El estatus de tu orden es: </h1>
+    <h2> 
+      
+      @if ( $orden->estatus ==1 )
+      
+          Tu orden ha sido confirmada!
+          <div class="text-center">
+            <img id="previsualizar"  src="/storage//platillos/confirmada.png"   
+            class="d-block w-100" alt="example placeholder avatar" width="150px" height="300px">
+            </div>
+      
+      @endif
 
-    <div class="text-center">
-        <img src="storage\app\public\platillos\ESTATUS.png" class="img-fluid" alt="...">
-      </div>
-    <br>
-    <br>
+      @if ($orden->estatus ==2)
+       ¡Tu orden esta siendo preparada!
+      <div class="text-center">
+        <img id="previsualizar"  src="/storage//platillos/progreso.png"   
+        class="d-block w-100" alt="example placeholder avatar" width="150px" height="300px">
+        </div>
+      @endif
 
-    <div class="text-center">
+      @if ($orden->estatus ==3)
+      ¡Tu orden ya va en camino!
+     <div class="text-center">
+       <img id="previsualizar"  src="/storage//platillos/Enviada.png"   
+       class="d-block w-100" alt="example placeholder avatar" width="150px" height="300px">
+       </div>
+       <div class="text-center">
 
-    <orden-recibida></orden-recibida>
+        <orden-recibida></orden-recibida>
+    
+        </div>
+     @endif
 
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+     
+    </h2>
+
+ 
+ 
 
 
 </div>
