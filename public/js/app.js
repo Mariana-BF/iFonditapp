@@ -37523,7 +37523,7 @@ process.umask = function() { return 0; };
 /***/ (function(module) {
 
 /*!
-* sweetalert2 v10.16.5
+* sweetalert2 v10.16.4
 * Released under the MIT License.
 */
 (function (global, factory) {
@@ -40833,11 +40833,15 @@ process.umask = function() { return 0; };
   var prepareParams = function prepareParams(userParams, mixinParams) {
     var templateParams = getTemplateParams(userParams);
 
+    var showClass = _extends({}, defaultParams.showClass, mixinParams.showClass, templateParams.showClass, userParams.showClass);
+
+    var hideClass = _extends({}, defaultParams.hideClass, mixinParams.hideClass, templateParams.hideClass, userParams.hideClass);
+
     var params = _extends({}, defaultParams, mixinParams, templateParams, userParams); // precedence is described in #2131
 
 
-    params.showClass = _extends({}, defaultParams.showClass, params.showClass);
-    params.hideClass = _extends({}, defaultParams.hideClass, params.hideClass); // @deprecated
+    params.showClass = showClass;
+    params.hideClass = hideClass; // @deprecated
 
     if (userParams.animation === false) {
       params.showClass = {
@@ -41148,7 +41152,7 @@ process.umask = function() { return 0; };
     };
   });
   SweetAlert.DismissReason = DismissReason;
-  SweetAlert.version = '10.16.5';
+  SweetAlert.version = '10.16.4';
 
   var Swal = SweetAlert;
   Swal["default"] = Swal;
@@ -41424,7 +41428,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("input", {
     staticClass: "btn btn-success",
-    attrs: { type: "submit", value: "Completar Pedido" },
+    attrs: { type: "button", value: "Completar Pedido" },
     on: { click: _vm.enviarFormulario }
   })
 }

@@ -2,7 +2,9 @@
 
 @section('content') <!-- Lo de enmedio -->
 <h2 class="text-center mb-5">Platillos</h2>
+
     <div class="col-md-10 mx-auto bg-white p-3">
+        <a href="{{ route('admin.ordenes') }}" type="button" class="btn btn-success mb-3">Administrar ordenes</a>
         <table class="table">
             <thead class="colorTabla text-light">
                 <tr class="text-center">

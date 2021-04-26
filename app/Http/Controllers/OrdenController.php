@@ -108,4 +108,40 @@ class OrdenController extends Controller
 
         return redirect()->action('HomeController@getUser');
     }
+
+
+    public function ordenes()
+    {
+        
+        $platillosPedidos = DB::table('orden_has_platillo')
+        ->join('platillos', 'orden_has_platillo.idPlatillo', '=', 'platillos.id')
+        ->get();
+
+        $orden = DB::table('ordens')->get();
+
+        
+        return view('administraorden',compact('platillosPedidos','orden'));
+    }
+
+    public function cambiarordennueva($id)
+    {
+        
+        DB::update('update ordens set estatus = 2 where id = ?', [$id]);
+
+        return redirect()->action('OrdenController@ordenes');
+    }
+
+    public function deleteorden($id)
+    {
+        DB::delete('delete from orden_has_platillo where orden_id = ?',[$id]);
+        DB::delete('delete from ordens where id = ?',[$id]);
+
+        return redirect()->action('OrdenController@ordenes');
+    }
+
+    public function cambiarordenproceso($id)
+    {
+        DB::update('update ordens set estatus = 3 where id = ?', [$id]);
+        return redirect()->action('OrdenController@ordenes');
+    }
 }
