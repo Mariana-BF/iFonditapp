@@ -2,7 +2,7 @@
     <input type="button" 
     class="btn btn-success" 
     value="Completar Pedido"
-    v-on:click="enviarFormulario"
+    v-on:click="enviarFormulario "
     >   
 
 </template>
@@ -15,10 +15,12 @@ export default {
         enviarFormulario()
         {
             this.$swal({
-                title: 'Tu pedido se completó exitosamente',
+                title: 'Tu pedido  se completó exitosamente',
                 text: "Podrás verlo en la sección de seguir pedido",
-                icon: 'success'
+                icon: 'success',
+                confirmButtonText: 'Entendido!',
             })
+        
         }
     }
 }

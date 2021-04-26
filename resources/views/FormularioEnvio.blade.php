@@ -35,10 +35,17 @@
 
 
 
-<form>
+    <form method="POST" action=" {{route('Order.seguir') }}"  novalidate>
+      @csrf
 <div class="mb-3">
     <label for="exampleFormControlTextarea1" class="form-label">Instrucciones especiales</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" name="anotaciones"></textarea>
+    @error('anotaciones')
+    <span class="invalid-feedback d-block" role="alert">
+        <strong>{{$message}}</strong>
+    </span>
+@enderror
+
   </div>
 
   <div class="row mb-3">
@@ -75,7 +82,8 @@
         </div>
       </fieldset>
       <div class="col-12">
-        <enviar-formulario></enviar-formulario>
+        <enviar-formulario ></enviar-formulario>
+        
       </div>
 </form>
 
