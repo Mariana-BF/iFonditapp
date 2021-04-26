@@ -18,14 +18,17 @@
             </thead>
             <tbody>
                @foreach ($platillosPedidos as $item)
-                    <tr>
-                        <td class="text-center">{{$item->nombre}}</td>
-                        <td class="text-center">{{$item->categoria}}</td>
-                        <td class="text-center">{{$item->cantidad}}</td>
-                        <td class="text-center">
-                        <a type="button" class="btn btn-danger">Cancelar</a>
-                        </td>
-                    </tr>
+               @if ($item->orden_id==1)
+               <tr>
+                <td class="text-center">{{$item->nombre}}</td>
+                <td class="text-center">{{$item->categoria}}</td>
+                <td class="text-center">{{$item->cantidad}}</td>
+                <td class="text-center">
+                <a type="button" class="btn btn-danger">Cancelar</a>
+                </td>
+            </tr>
+               @endif
+                    
                     @endforeach
             </tbody>
         </table>

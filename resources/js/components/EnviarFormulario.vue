@@ -1,5 +1,5 @@
 <template>
-    <input type="button" 
+    <input type="submit" 
     class="btn btn-success" 
     value="Completar Pedido"
     v-on:click="enviarFormulario "

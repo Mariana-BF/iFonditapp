@@ -41548,7 +41548,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("input", {
     staticClass: "btn btn-success",
-    attrs: { type: "button", value: "Completar Pedido" },
+    attrs: { type: "submit", value: "Completar Pedido" },
     on: { click: _vm.enviarFormulario }
   })
 }
