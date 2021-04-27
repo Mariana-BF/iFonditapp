@@ -41,6 +41,12 @@ Route::get('/orden/ordenes','OrdenPlatilloController@getOrden')->name('orden');
 
 Route::put('/orden/{id_platillo}','OrdenController@InsertarenOrden')->name('InsertarOrden');
 Route::get('/order/create', 'OrdenController@create')->name('Order.crear');
+Route::post('/orderPlatillo/create', 'OrdenPlatilloController@create')->name('Order.seguir');
+Route::get('/orderPlatillo/create', 'OrdenPlatilloController@show')->name('Order.estatus');
 
+Route::get('/admin/ordenes','OrdenController@ordenes')->name('admin.ordenes');
+Route::get('/admin/nuevaOrden/{id}','OrdenController@cambiarordennueva')->name('admin.ordennueva');
+Route::get('/admin/nuevaOrden/{id}/delete','OrdenController@deleteorden')->name('admin.deteleorden');
+Route::get('/admin/nuevaOrden/{id}/enproceso','OrdenController@cambiarordenproceso')->name('admin.ordenproceso');
 
 Auth::routes();

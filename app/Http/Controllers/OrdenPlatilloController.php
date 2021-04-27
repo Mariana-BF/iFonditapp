@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Orden;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class OrdenPlatilloController extends Controller
 {
@@ -15,6 +17,7 @@ class OrdenPlatilloController extends Controller
     public function index()
     {
         //
+        //$orden=Orden::all(); 
     }
 
     /**
@@ -22,11 +25,28 @@ class OrdenPlatilloController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $data = request()->validate([
+            'anotaciones' => 'required|min:6',  
+        ]);
         //
+        $id_orden=request();
+        DB::update('update ordens set anotaciones = ? where id = 1', [$id_orden['anotaciones']] );
+        DB::update('update ordens set estatus = 1 where id = 1');
+
+        
+        $orden = Orden::all();
+        $orden = Orden::where('id',1)->first();
+
+          
+   
+            
+        return view('SeguirPedido',compact('orden'));
+        
     }
 
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -44,9 +64,17 @@ class OrdenPlatilloController extends Controller
      * @param  \App\Models\Orden  $orden
      * @return \Illuminate\Http\Response
      */
-    public function show(Orden $orden)
+    public function show()
     {
-        //
+        //return redirect()->action('HomeController@index');
+        $orden = Orden::all();
+        $orden = Orden::where('id',1)->first();
+
+          
+   
+            
+        return view('SeguirPedido',compact('orden'));
+        
     }
 
     /**

@@ -176,7 +176,7 @@ class PlatilloController extends Controller
 
     public function InsertarenOrden(Request $request) //, int $cantidad)
     {
-        return 'Entro al controller';
+        
         $platillos = Platillo::all();
         $platillos = Platillo::where('id_platillo',$id_platillo)->get();
         //$total  = $cantidad*$platillo->precio;
