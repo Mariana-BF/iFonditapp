@@ -3,7 +3,7 @@
 @section('content') <!-- Lo de enmedio -->
 <h2 class="text-center mb-5">Administra tus ordenes</h2>
     <div class="col-md-10 mx-auto bg-white p-3">
-        <a href="{{ route('home') }}" type="button" class="btn btn-success mb-3">Volver</a>
+        <a href="{{ route('home') }}" type="button" class="btn btn-primary mb-3">Volver</a>
         <h3 class="mb-3">Nuevas Ordenes</h3>
         <table class="table">
             <thead class="colorTabla text-light">
@@ -33,7 +33,7 @@
                             </td>
                             <td>{{$item->anotaciones}}</td>
                             <td class="text-center">
-                                <a class="btn btn-dark mr-1 w-50 mb-2" href="{{ route('admin.ordennueva',['id' => $item->id ])}}">Orden en proceso</a>
+                                <a class="btn btn-success mr-1 w-50 mb-2" href="{{ route('admin.ordennueva',['id' => $item->id ])}}">Orden en proceso</a>
                         </td>
                     </tr>
                     @endif
@@ -69,7 +69,7 @@
                                 @endforeach
                             </td>
                             <td class="text-center">
-                                <a class="btn btn-dark mr-1 w-50 mb-2" href="{{ route('admin.ordenproceso',['id' => $item->id ])}}">Orden enviada</a>
+                                <a class="btn btn-success mr-1 w-50 mb-2" href="{{ route('admin.ordenproceso',['id' => $item->id ])}}">Orden enviada</a>
                         </td>
                     </tr>
                     @endif

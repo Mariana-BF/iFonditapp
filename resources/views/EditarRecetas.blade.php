@@ -30,6 +30,10 @@
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Descripción</label>
               <textarea class="form-control" value="{{$platillo->descripcion}}" name="descripcion" id="exampleFormControlTextarea1" rows="3">{{$platillo->descripcion}}</textarea>
+              <br>
+          <label for="exampleFormControlTextarea1">Agrega una foto para el producto:</label>
+          <br>
+  
               <input type="file" name="imagen" accept="image/*" onchange="prevIMG(this)">
             </div>
             <a type="button"  class="btn btn-primary"  href="{{route('home')}}" >Atrás</a>
@@ -43,8 +47,7 @@
             <div class="file-field">
               <div class="mb-4 text-center">
                 <img id="previsualizar" src="/storage/{{$platillo->imagen}}"
-                
-                  class="rounded-circle z-depth-1-half avatar-pic" alt="example placeholder avatar" width="150px" height="150px">
+                class="rounded z-depth-1-half avatar-pic" alt="example placeholder avatar" width="100%" height="150px">
               </div>
               <div class="d-flex justify-content-center">
                 <div class="btn btn-mdb-color btn-rounded float-left">

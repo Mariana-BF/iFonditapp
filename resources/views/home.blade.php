@@ -4,7 +4,7 @@
 <h2 class="text-center mb-5">Platillos</h2>
 
     <div class="col-md-10 mx-auto bg-white p-3">
-        <a href="{{ route('admin.ordenes') }}" type="button" class="btn btn-success mb-3">Administrar ordenes</a>
+        
         <table class="table">
             <thead class="colorTabla text-light">
                 <tr class="text-center">
@@ -19,7 +19,8 @@
                         <td>{{$platillo->nombre}}</td>
                         <td>{{$platillo->categoria}}</td>
                         <td class="text-center">
-                            <a class="btn btn-dark mr-1 w-50 mb-2" href="{{route('platillos.editar',['platillo'=>$platillo->id])}}">Editar</a>
+                            <a class="btn btn-dark mr-1 w-50 mb-2" href="{{route('platillos.editar',['platillo'=>$platillo->id])}}" >Editar</a>
+                        
                         </td>
                     </tr>
                 @endforeach

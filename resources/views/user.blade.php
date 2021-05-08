@@ -60,9 +60,10 @@
                                     <input  type="hidden" name="cantidad" id="inputvalue" >
                                     <input  type="hidden" name="id" value="{{$platillo->id}}">
 
-                                    <button type="submit">Ordenar</button>
+                                    <button class="btn btn-primary" type="submit">Ordenar</button>
                                 </form>
-                                <input id="cantidad" class="cantidad" type="number" min="1" max="100" />
+                                <input id="cantidad" class="cantidad" type="number" min="1" max="10" style="width: 70px; border: 2px solid blue;
+                                border-radius: 4px;"/>
                           </div>
                         </div>
                            

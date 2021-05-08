@@ -12,12 +12,19 @@
     <h1> El estatus de tu orden es: </h1>
     <h2> 
       
+
+      @if ( $orden->estatus ==0 )
+      Aún no has ordenado nada, visita nuestro menú
+      @endif
+
       @if ( $orden->estatus ==1 )
       
           Tu orden ha sido confirmada!
           <div class="text-center">
             <img id="previsualizar"  src="/storage//platillos/confirmada.png"   
             class="d-block w-100" alt="example placeholder avatar" width="150px" height="300px">
+            <p>Si deseas cancelar tu pedido, éste es el único momento en que podrás hacerlo</p>
+            <cancelar-pedido></cancelar-pedido>
             </div>
       
       @endif

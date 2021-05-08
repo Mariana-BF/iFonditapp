@@ -74,8 +74,12 @@
                   <strong>{{$message}}</strong>
               </span>
           @enderror
+          <br>
+          <label for="exampleFormControlTextarea1">Agrega una foto para el producto:</label>
+          <br>
           <input type="file" name="imagen" accept="image/*" onchange="prevIMG(this)"> 
             </div>
+            <br>
             <a type="button" class="btn btn-primary"  href="{{route('home')}}" >Atrás</a>
             <input type="submit" class="btn btn-success" value="Agregar Platillo">
           </form>
@@ -85,7 +89,7 @@
             <div class="file-field">
               <div class="mb-4 text-center">
                 <img id="previsualizar"  src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg"   
-                  class="rounded-circle z-depth-1-half avatar-pic" alt="example placeholder avatar" width="150px" height="150px">
+                  class="rounded z-depth-1-half avatar-pic" alt="example placeholder avatar" width="100%" height="150px">
                  
                 </div>
               

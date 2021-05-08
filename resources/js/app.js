@@ -25,6 +25,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('actualizar-platillo', require('./components/Actualizarplatillo.vue').default);
 Vue.component('enviar-formulario', require('./components/EnviarFormulario.vue').default);
 Vue.component('orden-recibida', require('./components/OrdenRecibida.vue').default);
+Vue.component('cancelar-pedido', require('./components/CancelarPedido.vue').default);
 
 console.log(Vue.prototype);
 /**

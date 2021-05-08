@@ -132,7 +132,7 @@ class OrdenController extends Controller
     }
 
     public function deleteorden($id)
-    {
+    {   //ojo porque se está borrando la orden 1 y nunca e crea
         DB::delete('delete from orden_has_platillo where orden_id = ?',[$id]);
         DB::delete('delete from ordens where id = ?',[$id]);
 

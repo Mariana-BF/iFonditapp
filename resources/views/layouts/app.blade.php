@@ -76,7 +76,13 @@
                                     <a class="dropdown-item" href="{{ route('home') }}">
                                         Editar platillos
                                     </a>
-                                        @endif
+                                        
+                                    <a class="dropdown-item" href="{{ route('admin.ordenes') }}">
+                                        Administrar órdenes
+                                    </a>
+
+                                    @endif
+
                                         @if ( Auth::user()->fullacces=='no')
 
                                         <a class="dropdown-item" href="{{ route('Order.estatus') }}">
